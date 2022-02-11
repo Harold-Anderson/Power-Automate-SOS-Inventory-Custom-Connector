@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "connectionParameters": {
+      "token": {
+        "type": "oauthSetting",
+        "oAuthSettings": {
+          "identityProvider": "oauth2",
+          "clientId": "3ad73fc4c17842938ea0df3c11ffbf64",
+          "scopes": [],
+          "redirectMode": "Global",
+          "redirectUrl": "https://global.consent.azure-apim.net/redirect",
+          "properties": {
+            "IsFirstParty": "False",
+            "IsOnbehalfofLoginSupported": false
+          },
+          "customParameters": {
+            "authorizationUrl": {
+              "value": "https://api.sosinventory.com/oauth2/authorize"
+            },
+            "tokenUrl": {
+              "value": "https://api.sosinventory.com/oauth2/token"
+            },
+            "refreshUrl": {
+              "value": "https://api.sosinventory.com/oauth2/token"
+            }
+          }
+        }
+      }
+    },
+    "iconBrandColor": "#007ee5",
+    "capabilities": [],
+    "publisher": "Harold Anderson"
+  }
+}
