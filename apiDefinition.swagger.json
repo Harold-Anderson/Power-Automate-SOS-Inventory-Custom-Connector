@@ -34,10 +34,6 @@
                   "type": "integer",
                   "description": "Total number of objects"
                 },
-                "id": {
-                  "type": "integer",
-                  "description": "Item ID"
-                },
                 "data": {
                   "type": "array",
                   "description": "Array of items",
@@ -45,6 +41,7 @@
                     "type": "object",
                     "properties": {
                       "id": {
+                        "description": "Item ID",
                         "type": "integer",
                         "format": "int32",
                         "example": "28"
@@ -377,7 +374,7 @@
             "name": "location",
             "type": "string",
             "x-ms-summary": "Location",
-            "description": "Filters items according to the name of the location. This will also cause the inventory quantity values to reflect the totals at this location.",
+            "description": "Inventory at given location",
             "required": false
           },
           {
@@ -429,16 +426,155 @@
     "/location": {
       "get": {
         "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "# Locations Returned"
+                },
+                "totalCount": {
+                  "type": "integer",
+                  "description": "# Matching Locations"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "Location ID",
+                        "type": "integer"
+                      },
+                      "syncToken": {
+                        "description": "syncToken",
+                        "type": "integer"
+                      },
+                      "name": {
+                        "description": "Location Name",
+                        "type": "string"
+                      },
+                      "binTracking": {
+                        "description": "Bin Tracking",
+                        "type": "boolean"
+                      },
+                      "bins": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "description": "Bins",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "description": "ID"
+                            },
+                            "syncToken": {
+                              "type": "integer",
+                              "description": "syncToken"
+                            },
+                            "number": {
+                              "type": "string",
+                              "description": "Bin Number"
+                            },
+                            "location": {
+                              "type": "string",
+                              "description": "Location"
+                            },
+                            "sortOrder": {
+                              "type": "integer",
+                              "description": "sortOrder"
+                            }
+                          }
+                        }
+                      },
+                      "address": {
+                        "type": "object",
+                        "description": "Address",
+                        "properties": {
+                          "line1": {
+                            "type": "string",
+                            "description": "line1"
+                          },
+                          "line2": {
+                            "type": "string",
+                            "description": "line2"
+                          },
+                          "line3": {
+                            "type": "string",
+                            "description": "line3"
+                          },
+                          "line4": {
+                            "type": "string",
+                            "description": "line4"
+                          },
+                          "line5": {
+                            "type": "string",
+                            "description": "line5"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "City"
+                          },
+                          "stateProvince": {
+                            "type": "string"
+                          },
+                          "postalCode": {
+                            "type": "string",
+                            "description": "Postal Code"
+                          },
+                          "country": {
+                            "type": "string",
+                            "description": "Country"
+                          },
+                          "phone": {
+                            "type": "string",
+                            "description": "Phone"
+                          },
+                          "email": {
+                            "type": "string",
+                            "description": "Email"
+                          },
+                          "company": {
+                            "type": "string",
+                            "description": "Company"
+                          },
+                          "contact": {
+                            "type": "string",
+                            "description": "Contact"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Query Status"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "Message"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "summary": "Locations",
         "description": "List Locations",
         "operationId": "Location",
         "x-ms-visibility": "important",
-        "parameters": []
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "x-ms-summary": "Limit",
+            "description": "Limit number of locations returned. Default 10",
+            "type": "integer",
+            "default": 10
+          }
+        ]
       }
     }
   },
