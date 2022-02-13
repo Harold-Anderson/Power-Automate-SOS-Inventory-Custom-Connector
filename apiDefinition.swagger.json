@@ -173,43 +173,35 @@
                         }
                       },
                       "onhand": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "available": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "onSO": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "onSR": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "rented": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "onWO": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "onPO": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "onRMA": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "reorderPoint": {
@@ -222,18 +214,15 @@
                         "type": "string"
                       },
                       "salesPrice": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "23"
                       },
                       "baseSalesPrice": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "23"
                       },
                       "markupPercent": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "useMarkup": {
@@ -255,13 +244,11 @@
                         "example": "-92.27477"
                       },
                       "weight": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "volume": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "weightUnit": {
@@ -274,7 +261,6 @@
                       },
                       "sublevel": {
                         "type": "integer",
-                        "format": "int32",
                         "example": "0"
                       },
                       "taxable": {
@@ -339,20 +325,12 @@
                       "imageChanged": {
                         "type": "boolean"
                       },
-                      "hasVariants": {
-                        "type": "boolean"
-                      },
-                      "variantMaster": {
-                        "type": "string"
-                      },
                       "commissionRate": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "commissionAmount": {
-                        "type": "integer",
-                        "format": "int32",
+                        "type": "number",
                         "example": "0"
                       },
                       "commissionExempt": {
@@ -389,10 +367,48 @@
             }
           }
         },
-        "summary": "Items",
+        "summary": "List Items",
         "description": "List Items",
         "operationId": "Item",
-        "x-ms-visibility": "important"
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "location",
+            "type": "string",
+            "x-ms-summary": "Location",
+            "description": "Filters items according to the name of the location. This will also cause the inventory quantity values to reflect the totals at this location.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "tags",
+            "type": "string",
+            "x-ms-summary": "Tags",
+            "description": "Returns records that match the provided comma separated list of tags.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "type": "string",
+            "x-ms-summary": "Type",
+            "description": "Returns records that match the provided item type.",
+            "enum": [
+              "Inventory Item",
+              "Assembly"
+            ],
+            "required": false
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "x-ms-summary": "Limit",
+            "description": "Limit number of items returned. Default 10",
+            "type": "integer",
+            "default": 10
+          }
+        ]
       }
     },
     "/lot": {
