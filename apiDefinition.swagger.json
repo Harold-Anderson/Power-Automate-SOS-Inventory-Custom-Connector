@@ -1,9 +1,14 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "SOS",
-    "description": "Connector to retrieve & update information in SOS Inventory",
-    "version": "1.0"
+    "version": "1.0",
+    "title": "SOS Inventory",
+    "description": "Retrieves and updates information in SOS Inventory",
+    "contact": {
+      "name": "Harold Anderson",
+      "url": "https://thaiwala.com",
+      "email": "harold@thaiwala.com"
+    }
   },
   "host": "api.sosinventory.com",
   "basePath": "/api/v2",
@@ -16,30 +21,378 @@
     "/item": {
       "get": {
         "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "The number of results returned in this query."
+                },
+                "totalCount": {
+                  "type": "integer",
+                  "description": "Total number of objects"
+                },
+                "id": {
+                  "type": "integer",
+                  "description": "Item ID"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of items",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "28"
+                      },
+                      "starred": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "syncToken": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "21"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "10868070000415"
+                      },
+                      "fullname": {
+                        "type": "string",
+                        "example": "10868070000415"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "Case of 6 Unsweetened Concentrate"
+                      },
+                      "sku": {
+                        "type": "string"
+                      },
+                      "barcode": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "Assembly"
+                      },
+                      "url": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "tags": {
+                        "type": "string",
+                        "example": "track"
+                      },
+                      "notes": {
+                        "type": "string"
+                      },
+                      "purchaseDescription": {
+                        "type": "string"
+                      },
+                      "vendorPartNumber": {
+                        "type": "string"
+                      },
+                      "customerPartNumber": {
+                        "type": "string"
+                      },
+                      "vendor": {
+                        "type": "string"
+                      },
+                      "bin": {
+                        "type": "string"
+                      },
+                      "warranty": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "class": {
+                        "type": "string"
+                      },
+                      "incomeAccount": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "13"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Sales"
+                          }
+                        }
+                      },
+                      "cogsAccount": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "27"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Cost of Goods Sold"
+                          }
+                        }
+                      },
+                      "assetAccount": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "26"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Inventory Asset"
+                          }
+                        }
+                      },
+                      "expenseAccount": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "27"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Cost of Goods Sold"
+                          }
+                        }
+                      },
+                      "onhand": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "available": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "onSO": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "onSR": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "rented": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "onWO": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "onPO": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "onRMA": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "reorderPoint": {
+                        "type": "string"
+                      },
+                      "maxStock": {
+                        "type": "string"
+                      },
+                      "leadTime": {
+                        "type": "string"
+                      },
+                      "salesPrice": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "23"
+                      },
+                      "baseSalesPrice": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "23"
+                      },
+                      "markupPercent": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "useMarkup": {
+                        "type": "boolean"
+                      },
+                      "minimumPrice": {
+                        "type": "string"
+                      },
+                      "basePurchaseCost": {
+                        "type": "number",
+                        "example": "11.66"
+                      },
+                      "purchaseCost": {
+                        "type": "number",
+                        "example": "8.0130144145"
+                      },
+                      "costBasis": {
+                        "type": "number",
+                        "example": "-92.27477"
+                      },
+                      "weight": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "volume": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "weightUnit": {
+                        "type": "string",
+                        "example": "lb"
+                      },
+                      "volumeUnit": {
+                        "type": "string",
+                        "example": "cbm"
+                      },
+                      "sublevel": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "taxable": {
+                        "type": "boolean"
+                      },
+                      "salesTaxCode": {
+                        "type": "string"
+                      },
+                      "purchaseTaxCode": {
+                        "type": "string"
+                      },
+                      "willSync": {
+                        "type": "boolean"
+                      },
+                      "updateShopify": {
+                        "type": "boolean"
+                      },
+                      "updateBigCommerce": {
+                        "type": "boolean"
+                      },
+                      "alwaysShippable": {
+                        "type": "boolean"
+                      },
+                      "hasImage": {
+                        "type": "boolean"
+                      },
+                      "serialTracking": {
+                        "type": "boolean"
+                      },
+                      "lotTracking": {
+                        "type": "boolean"
+                      },
+                      "archived": {
+                        "type": "boolean"
+                      },
+                      "showOnSalesForms": {
+                        "type": "boolean"
+                      },
+                      "showOnPurchasingForms": {
+                        "type": "boolean"
+                      },
+                      "showOnManufacturingForms": {
+                        "type": "boolean"
+                      },
+                      "customFields": {
+                        "type": "string"
+                      },
+                      "uoms": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "priceTiers": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "summaryOnly": {
+                        "type": "boolean"
+                      },
+                      "imageAsBase64String": {
+                        "type": "string"
+                      },
+                      "imageChanged": {
+                        "type": "boolean"
+                      },
+                      "hasVariants": {
+                        "type": "boolean"
+                      },
+                      "variantMaster": {
+                        "type": "string"
+                      },
+                      "commissionRate": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "commissionAmount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "0"
+                      },
+                      "commissionExempt": {
+                        "type": "boolean"
+                      },
+                      "syncMessage": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "lastSync": {
+                        "type": "string",
+                        "example": "2021-12-31T00:06:03.000Z"
+                      },
+                      "keys": {
+                        "type": "string"
+                      },
+                      "values": {
+                        "type": "string"
+                      },
+                      "__IMTLENGTH__": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "21"
+                      },
+                      "__IMTINDEX__": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
-        "summary": "List items",
+        "summary": "Items",
         "description": "List Items",
-        "operationId": "Items",
-        "x-ms-visibility": "important",
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Host",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "api.sosinventory.com"
-          }
-        ]
+        "operationId": "Item",
+        "x-ms-visibility": "important"
       }
     },
     "/lot": {
@@ -54,20 +407,7 @@
         "description": "List Lots",
         "operationId": "Lot",
         "x-ms-visibility": "important",
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Host",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          }
-        ]
+        "parameters": []
       }
     },
     "/location": {
@@ -82,23 +422,24 @@
         "description": "List Locations",
         "operationId": "Location",
         "x-ms-visibility": "important",
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Host",
-            "in": "header",
-            "required": false,
-            "type": "string"
-          }
-        ]
+        "parameters": []
       }
     }
   },
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://thaiwala.com"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": "https://thaiwala.com"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "Business Management"
+    }
+  ],
   "definitions": {},
   "parameters": {},
   "responses": {},
