@@ -99,7 +99,17 @@
                         "type": "string"
                       },
                       "vendor": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "Vendor ID"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Vendor Name"
+                          }
+                        }
                       },
                       "bin": {
                         "type": "string"
@@ -202,13 +212,13 @@
                         "example": "0"
                       },
                       "reorderPoint": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "maxStock": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "leadTime": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "salesPrice": {
                         "type": "number",
@@ -226,7 +236,7 @@
                         "type": "boolean"
                       },
                       "minimumPrice": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "basePurchaseCost": {
                         "type": "number",
