@@ -1,0 +1,105 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "integer",
+            "description": "# Lots Returned"
+        },
+        "totalCount": {
+            "type": "integer",
+            "description": "# Matching Lots"
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Lot ID"
+                    },
+                    "starred": {
+                        "type": "integer",
+                        "description": "Starred"
+                    },
+                    "syncToken": {
+                        "description": "syncToken",
+                        "type": "integer"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Lot Number"
+                    },
+                    "item": {
+                        "type": "object",
+                        "description": "Associated Item",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "Associated Item ID"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "Associated Item Name"
+                            }
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Lot Description"
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Expiration Date"
+                    },
+                    "recalled": {
+                        "type": "boolean",
+                        "description": "recalled"
+                    },
+                    "expired": {
+                        "type": "boolean",
+                        "description": "expired"
+                    },
+                    "customFields": {
+                        "type": "array",
+                        "description": "Custom Fields",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "description": "ID"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Name"
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "description": "Value"
+                                },
+                                "dataType": {
+                                    "type": "string",
+                                    "description": "Data Type"
+                                }
+                            }
+                        }
+                    },
+                    "onhand": {
+                        "type": "number",
+                        "description": "On Hand"
+                    },
+                    "available": {
+                        "type": "number",
+                        "description": "Available"
+                    },
+                    "summaryOnly": {
+                        "type": "boolean",
+                        "description": "Summary Only"
+                    }
+                }
+            }
+        }
+    }
+}
