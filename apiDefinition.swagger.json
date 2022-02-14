@@ -534,7 +534,49 @@
         "description": "List Lots",
         "operationId": "Lot",
         "x-ms-visibility": "important",
-        "parameters": []
+        "parameters": [
+          {
+            "in": "query",
+            "name": "location",
+            "type": "string",
+            "x-ms-summary": "Location",
+            "description": "Inventory at given location",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "archived",
+            "type": "string",
+            "x-ms-summary": "Archived",
+            "description": "Archived",
+            "enum": [
+              "Yes",
+              "No"
+            ],
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "description": "Expired, Recalled, Neither",
+            "type": "string",
+            "x-ms-summary": "Status",
+            "enum": [
+              "expired",
+              "recalled",
+              "notexpirednotrecalled"
+            ],
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "x-ms-summary": "Limit",
+            "description": "Max records to return, default 10",
+            "type": "integer",
+            "default": 10
+          }
+        ]
       }
     },
     "/location": {
