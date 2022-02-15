@@ -725,6 +725,37 @@
         ]
       }
     },
+    "/customer/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/customer"
+              }
+            }
+          }
+        },
+        "summary": "Get a Customer",
+        "description": "Gets a Customer by ID",
+        "operationId": "GetCustomer",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "x-ms-summary": "id",
+            "description": "Customer ID in SOS Inventory.",
+            "type": "number",
+            "x-ms-visibility": "important",
+            "x-ms-url-encoding": "single"
+          }
+        ]
+      }
+    },
     "/salesorder/{id}": {
       "get": {
         "responses": {
@@ -883,11 +914,11 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "# Sales Orders Returned"
+                  "description": "# Pick Tickets Returned"
                 },
                 "totalCount": {
                   "type": "integer",
-                  "description": "# Matching Sales Orders"
+                  "description": "# Matching Pick Tickets"
                 },
                 "data": {
                   "type": "array",
@@ -1057,133 +1088,10 @@
           }
         },
         "billing": {
-          "type": "object",
-          "properties": {
-            "company": {
-              "type": "string",
-              "example": "UNFI United Natural Foods"
-            },
-            "contact": {
-              "type": "string",
-              "example": "UNFI Rocklin"
-            },
-            "phone": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "addressName": {
-              "type": "string",
-              "example": ""
-            },
-            "addressType": {
-              "type": "string",
-              "example": ""
-            },
-            "address": {
-              "type": "object",
-              "properties": {
-                "line1": {
-                  "type": "string",
-                  "example": "1 Albion Road, Suite 101"
-                },
-                "line2": {
-                  "type": "string"
-                },
-                "line3": {
-                  "type": "string"
-                },
-                "line4": {
-                  "type": "string"
-                },
-                "line5": {
-                  "type": "string"
-                },
-                "city": {
-                  "type": "string",
-                  "example": "Lincoln"
-                },
-                "stateProvince": {
-                  "type": "string",
-                  "example": "RI"
-                },
-                "postalCode": {
-                  "type": "string",
-                  "example": "02865-3749"
-                },
-                "country": {
-                  "type": "string",
-                  "example": "USA"
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/address"
         },
         "shipping": {
-          "type": "object",
-          "properties": {
-            "company": {
-              "type": "string",
-              "example": "UNFI United Natural Foods"
-            },
-            "contact": {
-              "type": "string",
-              "example": "UNFI Rocklin"
-            },
-            "phone": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "addressName": {
-              "type": "string",
-              "example": ""
-            },
-            "addressType": {
-              "type": "string",
-              "example": ""
-            },
-            "address": {
-              "type": "object",
-              "properties": {
-                "line1": {
-                  "type": "string",
-                  "example": "UNFI"
-                },
-                "line2": {
-                  "type": "string",
-                  "example": "1101 Sunset Blvd"
-                },
-                "line3": {
-                  "type": "string"
-                },
-                "line4": {
-                  "type": "string"
-                },
-                "line5": {
-                  "type": "string"
-                },
-                "city": {
-                  "type": "string",
-                  "example": "Rocklin"
-                },
-                "stateProvince": {
-                  "type": "string",
-                  "example": "CA"
-                },
-                "postalCode": {
-                  "type": "string",
-                  "example": "95765"
-                },
-                "country": {
-                  "type": "string",
-                  "example": "US"
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/address"
         },
         "terms": {
           "type": "object",
@@ -1779,6 +1687,267 @@
         }
       }
     },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": "123"
+        },
+        "starred": {
+          "type": "number",
+          "example": "0"
+        },
+        "syncToken": {
+          "type": "number",
+          "example": "0"
+        },
+        "name": {
+          "type": "string",
+          "example": "ABC Plastics"
+        },
+        "fullname": {
+          "type": "string",
+          "example": ""
+        },
+        "parent": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "311"
+            },
+            "name": {
+              "type": "string",
+              "example": "ABC Products/ABC Plastics"
+            }
+          }
+        },
+        "sublevel": {
+          "type": "number",
+          "example": "1"
+        },
+        "email": {
+          "type": "string",
+          "example": "mike@abcplastics.com"
+        },
+        "website": {
+          "type": "string",
+          "example": "https://abc.com"
+        },
+        "phone": {
+          "type": "string",
+          "example": "817-555-1212"
+        },
+        "mobile": {
+          "type": "string",
+          "example": "817-555-2121"
+        },
+        "altPhone": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string",
+          "example": "ABC Plastic Products, Inc."
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "example": "Mr"
+            },
+            "firstName": {
+              "type": "string",
+              "example": "Mike"
+            },
+            "lastName": {
+              "type": "string",
+              "example": "Mills"
+            },
+            "suffix": {
+              "type": "string"
+            }
+          }
+        },
+        "billing": {
+          "$ref": "#/definitions/address"
+        },
+        "shipping": {
+          "$ref": "#/definitions/address"
+        },
+        "terms": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "11"
+            },
+            "name": {
+              "type": "string",
+              "example": "NET 30"
+            }
+          }
+        },
+        "priceTier": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "21"
+            },
+            "name": {
+              "type": "string",
+              "example": "A2"
+            }
+          }
+        },
+        "paymentMethod": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "7"
+            },
+            "name": {
+              "type": "string",
+              "example": "Check"
+            }
+          }
+        },
+        "salesRep": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "19"
+            },
+            "name": {
+              "type": "string",
+              "example": "Sally Sails"
+            }
+          }
+        },
+        "customerType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "3"
+            },
+            "name": {
+              "type": "string",
+              "example": "Wholesale"
+            }
+          }
+        },
+        "resaleNumber": {
+          "type": "string",
+          "example": "B4829-91941"
+        },
+        "contractorNumber": {
+          "type": "string"
+        },
+        "businessLicense": {
+          "type": "string"
+        },
+        "foundUsVia": {
+          "type": "string",
+          "example": "I-70 billboard"
+        },
+        "currency": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "42"
+            },
+            "name": {
+              "type": "string",
+              "example": "USD"
+            }
+          }
+        },
+        "tax": {
+          "type": "object",
+          "properties": {
+            "taxable": {
+              "type": "boolean"
+            },
+            "taxCode": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": "5"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Sales Tax"
+                }
+              }
+            }
+          }
+        },
+        "creditHold": {
+          "type": "boolean"
+        },
+        "billWithParent": {
+          "type": "boolean"
+        },
+        "lastSync": {
+          "type": "string",
+          "example": "2019-10-22T00:00:00"
+        },
+        "syncMessage": {
+          "type": "string",
+          "example": ""
+        },
+        "notes": {
+          "type": "string"
+        },
+        "customFields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number",
+                "example": "5"
+              },
+              "name": {
+                "type": "string",
+                "example": "Checkbox"
+              },
+              "value": {
+                "type": "string",
+                "example": "false"
+              },
+              "dataType": {
+                "type": "string",
+                "example": "Boolean"
+              }
+            }
+          }
+        },
+        "altAddresses": {
+          "type": "array",
+          "items": {}
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "hasChildren": {
+          "type": "boolean"
+        },
+        "summaryOnly": {
+          "type": "boolean"
+        }
+      }
+    },
     "linkedtransaction": {
       "type": "object",
       "properties": {
@@ -1793,6 +1962,70 @@
         },
         "linenumber": {
           "type": "integer"
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string",
+          "example": "UNFI United Natural Foods"
+        },
+        "contact": {
+          "type": "string",
+          "example": "UNFI Rocklin"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressName": {
+          "type": "string",
+          "example": ""
+        },
+        "addressType": {
+          "type": "string",
+          "example": ""
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "line1": {
+              "type": "string",
+              "example": "1 Albion Road, Suite 101"
+            },
+            "line2": {
+              "type": "string"
+            },
+            "line3": {
+              "type": "string"
+            },
+            "line4": {
+              "type": "string"
+            },
+            "line5": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string",
+              "example": "Lincoln"
+            },
+            "stateProvince": {
+              "type": "string",
+              "example": "RI"
+            },
+            "postalCode": {
+              "type": "string",
+              "example": "02865-3749"
+            },
+            "country": {
+              "type": "string",
+              "example": "USA"
+            }
+          }
         }
       }
     }
