@@ -725,6 +725,37 @@
         ]
       }
     },
+    "/salesorder/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/salesorder"
+              }
+            }
+          }
+        },
+        "summary": "Get a Sales Order",
+        "description": "Gets a Sales Order by ID",
+        "operationId": "GetSalesOrder",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "x-ms-summary": "id",
+            "description": "Returns specific order.",
+            "type": "number",
+            "x-ms-visibility": "important",
+            "x-ms-url-encoding": "single"
+          }
+        ]
+      }
+    },
     "/salesorder": {
       "get": {
         "responses": {
