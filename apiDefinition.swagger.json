@@ -748,7 +748,7 @@
             "required": true,
             "in": "path",
             "x-ms-summary": "id",
-            "description": "Returns specific order.",
+            "description": "Order ID in SOS Inventory.",
             "type": "number",
             "x-ms-visibility": "important",
             "x-ms-url-encoding": "single"
@@ -798,10 +798,10 @@
           },
           {
             "in": "query",
-            "name": "limit",
+            "name": "maxresults",
             "type": "number",
-            "x-ms-summary": "Limit",
-            "description": "Returns records that match the provided comma separated list of tags.",
+            "x-ms-summary": "Max Results",
+            "description": "Max Results to return. Default 200.",
             "required": false,
             "x-ms-visibility": "advanced",
             "default": "200"
@@ -866,8 +866,125 @@
             "name": "id",
             "in": "query",
             "x-ms-summary": "id",
-            "description": "Returns specific order.",
+            "description": "Returns specific order given id.",
             "type": "number",
+            "x-ms-visibility": "advanced"
+          }
+        ]
+      }
+    },
+    "/pickticket": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "# Sales Orders Returned"
+                },
+                "totalCount": {
+                  "type": "integer",
+                  "description": "# Matching Sales Orders"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/pickticket"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Pick tickets",
+        "description": "List Pick Tickets",
+        "operationId": "PickTicket",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "start",
+            "type": "number",
+            "x-ms-summary": "start",
+            "description": "A cursor used in pagination",
+            "required": false,
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "in": "query",
+            "name": "maxresults",
+            "type": "number",
+            "x-ms-summary": "Limit",
+            "description": "Maximum number of results to return",
+            "required": false,
+            "x-ms-visibility": "advanced",
+            "default": "200"
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "type": "string",
+            "x-ms-summary": "Summary",
+            "description": "If present, returns only summary values.",
+            "required": false,
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "x-ms-summary": "query",
+            "description": "Filter results by matching query.",
+            "type": "string",
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "in": "query",
+            "name": "archived",
+            "type": "boolean",
+            "x-ms-summary": "archived",
+            "description": "Filters by archived or not.",
+            "required": false,
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "x-ms-summary": "From Date",
+            "description": "Starting transaction date.",
+            "type": "string",
+            "format": "date",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "x-ms-summary": "To Date",
+            "description": "Ending transaction date.",
+            "type": "string",
+            "format": "date",
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "x-ms-summary": "Location",
+            "description": "Filters according to location.",
+            "type": "string",
+            "x-ms-visibility": "advanced"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "x-ms-summary": "Location",
+            "description": "Filters according to open/closed.",
+            "type": "string",
+            "enum": [
+              "open",
+              "closed"
+            ],
             "x-ms-visibility": "advanced"
           }
         ]
@@ -1373,6 +1490,309 @@
               }
             }
           }
+        }
+      }
+    },
+    "pickticket": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": "123"
+        },
+        "starred": {
+          "type": "number",
+          "example": "0"
+        },
+        "syncToken": {
+          "type": "number",
+          "example": "0"
+        },
+        "number": {
+          "type": "string",
+          "example": "EST-12345"
+        },
+        "date": {
+          "type": "string",
+          "example": "2019-05-08T09:13:00"
+        },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "23"
+            },
+            "name": {
+              "type": "string",
+              "example": "Test Customer"
+            }
+          }
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "10"
+            },
+            "name": {
+              "type": "string",
+              "example": "Warehouse West"
+            }
+          }
+        },
+        "channel": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "3"
+            },
+            "name": {
+              "type": "string",
+              "example": "Catalog"
+            }
+          }
+        },
+        "priority": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "4"
+            },
+            "name": {
+              "type": "string",
+              "example": "A"
+            }
+          }
+        },
+        "assignedToUser": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "38"
+            },
+            "name": {
+              "type": "string",
+              "example": "Jeri Sheff"
+            }
+          }
+        },
+        "shippingMethod": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "7"
+            },
+            "name": {
+              "type": "string",
+              "example": "UPS Ground"
+            }
+          }
+        },
+        "trackingNumber": {
+          "type": "string",
+          "example": "F84FSOI2O3FJV90012S"
+        },
+        "linkedTransaction": {
+          "$ref": "#/definitions/linkedtransaction"
+        },
+        "comment": {
+          "type": "string",
+          "example": "Pricing per unit"
+        },
+        "customerNotes": {
+          "type": "string",
+          "example": "lead time test"
+        },
+        "customFields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number",
+                "example": "5"
+              },
+              "name": {
+                "type": "string",
+                "example": "Checkbox"
+              },
+              "value": {
+                "type": "string",
+                "example": "false"
+              },
+              "dataType": {
+                "type": "string",
+                "example": "Boolean"
+              }
+            }
+          }
+        },
+        "pickBy": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2019-06-17T00:00:00"
+        },
+        "total": {
+          "type": "number",
+          "example": "12"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "summaryOnly": {
+          "type": "boolean"
+        },
+        "hasSignature": {
+          "type": "boolean"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number",
+                "example": "123345"
+              },
+              "lineNumber": {
+                "type": "number",
+                "example": "1"
+              },
+              "item": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": "851"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Widget"
+                  }
+                }
+              },
+              "class": {
+                "type": "string"
+              },
+              "job": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": "51"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "A62"
+                  }
+                }
+              },
+              "workcenter": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": "10"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Punch"
+                  }
+                }
+              },
+              "tax": {
+                "type": "object",
+                "properties": {
+                  "taxable": {
+                    "type": "boolean"
+                  },
+                  "taxCode": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": "1"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "TAX"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "number",
+                "example": "1"
+              },
+              "weight": {
+                "type": "number",
+                "example": "12"
+              },
+              "volume": {
+                "type": "number",
+                "example": "12"
+              },
+              "weightunit": {
+                "type": "string",
+                "example": "lb"
+              },
+              "volumeunit": {
+                "type": "string",
+                "example": "cbm"
+              },
+              "unitprice": {
+                "type": "number",
+                "example": "12"
+              },
+              "amount": {
+                "type": "number",
+                "example": "12"
+              },
+              "cost": {
+                "type": "number",
+                "example": "1"
+              },
+              "margin": {
+                "type": "number",
+                "example": "1100"
+              },
+              "listprice": {
+                "type": "number",
+                "example": "0"
+              },
+              "percentdiscount": {
+                "type": "number",
+                "example": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "linkedtransaction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "transactionType": {
+          "type": "string"
+        },
+        "refNumber": {
+          "type": "string"
+        },
+        "linenumber": {
+          "type": "integer"
         }
       }
     }
