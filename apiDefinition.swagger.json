@@ -735,500 +735,16 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "# Lots Returned"
+                  "description": "# Sales Orders Returned"
                 },
                 "totalCount": {
                   "type": "integer",
-                  "description": "# Matching Lots"
+                  "description": "# Matching Sales Orders"
                 },
                 "data": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number",
-                        "example": "80"
-                      },
-                      "starred": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "syncToken": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "number": {
-                        "type": "string",
-                        "example": "81"
-                      },
-                      "date": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2022-02-11T15:37:00.000Z"
-                      },
-                      "customer": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "number",
-                            "example": "92"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "UNFI Rocklin"
-                          }
-                        }
-                      },
-                      "location": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "number",
-                            "example": "1"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "PRISM"
-                          }
-                        }
-                      },
-                      "billing": {
-                        "type": "object",
-                        "properties": {
-                          "company": {
-                            "type": "string",
-                            "example": "UNFI United Natural Foods"
-                          },
-                          "contact": {
-                            "type": "string",
-                            "example": "UNFI Rocklin"
-                          },
-                          "phone": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "addressName": {
-                            "type": "string",
-                            "example": ""
-                          },
-                          "addressType": {
-                            "type": "string",
-                            "example": ""
-                          },
-                          "address": {
-                            "type": "object",
-                            "properties": {
-                              "line1": {
-                                "type": "string",
-                                "example": "1 Albion Road, Suite 101"
-                              },
-                              "line2": {
-                                "type": "string"
-                              },
-                              "line3": {
-                                "type": "string"
-                              },
-                              "line4": {
-                                "type": "string"
-                              },
-                              "line5": {
-                                "type": "string"
-                              },
-                              "city": {
-                                "type": "string",
-                                "example": "Lincoln"
-                              },
-                              "stateProvince": {
-                                "type": "string",
-                                "example": "RI"
-                              },
-                              "postalCode": {
-                                "type": "string",
-                                "example": "02865-3749"
-                              },
-                              "country": {
-                                "type": "string",
-                                "example": "USA"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "shipping": {
-                        "type": "object",
-                        "properties": {
-                          "company": {
-                            "type": "string",
-                            "example": "UNFI United Natural Foods"
-                          },
-                          "contact": {
-                            "type": "string",
-                            "example": "UNFI Rocklin"
-                          },
-                          "phone": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "addressName": {
-                            "type": "string",
-                            "example": ""
-                          },
-                          "addressType": {
-                            "type": "string",
-                            "example": ""
-                          },
-                          "address": {
-                            "type": "object",
-                            "properties": {
-                              "line1": {
-                                "type": "string",
-                                "example": "UNFI"
-                              },
-                              "line2": {
-                                "type": "string",
-                                "example": "1101 Sunset Blvd"
-                              },
-                              "line3": {
-                                "type": "string"
-                              },
-                              "line4": {
-                                "type": "string"
-                              },
-                              "line5": {
-                                "type": "string"
-                              },
-                              "city": {
-                                "type": "string",
-                                "example": "Rocklin"
-                              },
-                              "stateProvince": {
-                                "type": "string",
-                                "example": "CA"
-                              },
-                              "postalCode": {
-                                "type": "string",
-                                "example": "95765"
-                              },
-                              "country": {
-                                "type": "string",
-                                "example": "US"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "terms": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "number",
-                            "example": "6"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "2% 10 Net 30"
-                          }
-                        }
-                      },
-                      "salesRep": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "number",
-                            "example": "8"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "Ricky Roma"
-                          }
-                        }
-                      },
-                      "channel": {
-                        "type": "string"
-                      },
-                      "department": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "number",
-                            "example": "1"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "Retail"
-                          }
-                        }
-                      },
-                      "priority": {
-                        "type": "string"
-                      },
-                      "assignedToUser": {
-                        "type": "string"
-                      },
-                      "orderStage": {
-                        "type": "string"
-                      },
-                      "taxCode": {
-                        "type": "string"
-                      },
-                      "currency": {
-                        "type": "string"
-                      },
-                      "serial": {
-                        "type": "string"
-                      },
-                      "linkedTransaction": {
-                        "type": "string"
-                      },
-                      "linkedInvoices": {
-                        "type": "array",
-                        "items": {}
-                      },
-                      "linkedShipments": {
-                        "type": "array",
-                        "items": {}
-                      },
-                      "transactionLocationQuickBooks": {
-                        "type": "string"
-                      },
-                      "exchangeRate": {
-                        "type": "number",
-                        "example": "1"
-                      },
-                      "customerMessage": {
-                        "type": "string"
-                      },
-                      "statusMessage": {
-                        "type": "string"
-                      },
-                      "comment": {
-                        "type": "string"
-                      },
-                      "customerNotes": {
-                        "type": "string"
-                      },
-                      "customFields": {
-                        "type": "string"
-                      },
-                      "customerPO": {
-                        "type": "string",
-                        "example": "416453007"
-                      },
-                      "depositPercent": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "depositAmount": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "subTotal": {
-                        "type": "number",
-                        "example": "1380"
-                      },
-                      "discountPercent": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "discountAmount": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "taxPercent": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "taxAmount": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "shippingAmount": {
-                        "type": "number",
-                        "example": "0"
-                      },
-                      "total": {
-                        "type": "number",
-                        "example": "1380"
-                      },
-                      "discountTaxable": {
-                        "type": "boolean"
-                      },
-                      "shippingTaxable": {
-                        "type": "boolean"
-                      },
-                      "dropShip": {
-                        "type": "boolean"
-                      },
-                      "closed": {
-                        "type": "boolean"
-                      },
-                      "archived": {
-                        "type": "boolean"
-                      },
-                      "summaryOnly": {
-                        "type": "boolean"
-                      },
-                      "hasSignature": {
-                        "type": "boolean"
-                      },
-                      "earliestDueDate": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2022-02-11T00:00:00"
-                      },
-                      "statusLink": {
-                        "type": "string",
-                        "example": "https://.orderfacts.com/Go?o=2ydI%2fS%2bS7n%2bUds9ac%2fYSHg%3d%3d"
-                      },
-                      "keys": {
-                        "type": "string"
-                      },
-                      "values": {
-                        "type": "string"
-                      },
-                      "lines": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "number",
-                              "example": "106"
-                            },
-                            "lineNumber": {
-                              "type": "number",
-                              "example": "1"
-                            },
-                            "item": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number",
-                                  "example": "28"
-                                },
-                                "name": {
-                                  "type": "string",
-                                  "example": "10868070000415"
-                                }
-                              }
-                            },
-                            "class": {
-                              "type": "string"
-                            },
-                            "job": {
-                              "type": "string"
-                            },
-                            "workcenter": {
-                              "type": "string"
-                            },
-                            "tax": {
-                              "type": "object",
-                              "properties": {
-                                "taxable": {
-                                  "type": "boolean"
-                                },
-                                "taxCode": {
-                                  "type": "string"
-                                }
-                              }
-                            },
-                            "linkedTransaction": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string",
-                              "example": "Case of 6 Unsweetened Concentrate"
-                            },
-                            "quantity": {
-                              "type": "number",
-                              "example": "60"
-                            },
-                            "weight": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "volume": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "weightunit": {
-                              "type": "string",
-                              "example": "lb"
-                            },
-                            "volumeunit": {
-                              "type": "string",
-                              "example": "cbm"
-                            },
-                            "unitprice": {
-                              "type": "number",
-                              "example": "23"
-                            },
-                            "amount": {
-                              "type": "number",
-                              "example": "1380"
-                            },
-                            "altAmount": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "picked": {
-                              "type": "number",
-                              "example": "60"
-                            },
-                            "shipped": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "invoiced": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "produced": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "returned": {
-                              "type": "number",
-                              "example": "0"
-                            },
-                            "cost": {
-                              "type": "number"
-                            },
-                            "margin": {
-                              "type": "number"
-                            },
-                            "listPrice": {
-                              "type": "number"
-                            },
-                            "percentdiscount": {
-                              "type": "number"
-                            },
-                            "duedate": {
-                              "type": "string",
-                              "format": "date-time",
-                              "example": "2022-02-11T00:00:00"
-                            },
-                            "uom": {
-                              "type": "number"
-                            },
-                            "bin": {
-                              "type": "string"
-                            },
-                            "lot": {
-                              "type": "string"
-                            },
-                            "serials": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/definitions/salesorder"
                   }
                 }
               }
@@ -1341,7 +857,495 @@
       "propertyValue": "Business Management"
     }
   ],
-  "definitions": {},
+  "definitions": {
+    "salesorder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": "80"
+        },
+        "starred": {
+          "type": "number",
+          "example": "0"
+        },
+        "syncToken": {
+          "type": "number",
+          "example": "0"
+        },
+        "number": {
+          "type": "string",
+          "example": "81"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2022-02-11T15:37:00.000Z"
+        },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "92"
+            },
+            "name": {
+              "type": "string",
+              "example": "UNFI Rocklin"
+            }
+          }
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "1"
+            },
+            "name": {
+              "type": "string",
+              "example": "PRISM"
+            }
+          }
+        },
+        "billing": {
+          "type": "object",
+          "properties": {
+            "company": {
+              "type": "string",
+              "example": "UNFI United Natural Foods"
+            },
+            "contact": {
+              "type": "string",
+              "example": "UNFI Rocklin"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "addressName": {
+              "type": "string",
+              "example": ""
+            },
+            "addressType": {
+              "type": "string",
+              "example": ""
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "line1": {
+                  "type": "string",
+                  "example": "1 Albion Road, Suite 101"
+                },
+                "line2": {
+                  "type": "string"
+                },
+                "line3": {
+                  "type": "string"
+                },
+                "line4": {
+                  "type": "string"
+                },
+                "line5": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "Lincoln"
+                },
+                "stateProvince": {
+                  "type": "string",
+                  "example": "RI"
+                },
+                "postalCode": {
+                  "type": "string",
+                  "example": "02865-3749"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "USA"
+                }
+              }
+            }
+          }
+        },
+        "shipping": {
+          "type": "object",
+          "properties": {
+            "company": {
+              "type": "string",
+              "example": "UNFI United Natural Foods"
+            },
+            "contact": {
+              "type": "string",
+              "example": "UNFI Rocklin"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "addressName": {
+              "type": "string",
+              "example": ""
+            },
+            "addressType": {
+              "type": "string",
+              "example": ""
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "line1": {
+                  "type": "string",
+                  "example": "UNFI"
+                },
+                "line2": {
+                  "type": "string",
+                  "example": "1101 Sunset Blvd"
+                },
+                "line3": {
+                  "type": "string"
+                },
+                "line4": {
+                  "type": "string"
+                },
+                "line5": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "Rocklin"
+                },
+                "stateProvince": {
+                  "type": "string",
+                  "example": "CA"
+                },
+                "postalCode": {
+                  "type": "string",
+                  "example": "95765"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "US"
+                }
+              }
+            }
+          }
+        },
+        "terms": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "6"
+            },
+            "name": {
+              "type": "string",
+              "example": "2% 10 Net 30"
+            }
+          }
+        },
+        "salesRep": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "8"
+            },
+            "name": {
+              "type": "string",
+              "example": "Ricky Roma"
+            }
+          }
+        },
+        "channel": {
+          "type": "string"
+        },
+        "department": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "example": "1"
+            },
+            "name": {
+              "type": "string",
+              "example": "Retail"
+            }
+          }
+        },
+        "priority": {
+          "type": "string"
+        },
+        "assignedToUser": {
+          "type": "string"
+        },
+        "orderStage": {
+          "type": "string"
+        },
+        "taxCode": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "serial": {
+          "type": "string"
+        },
+        "linkedTransaction": {
+          "type": "string"
+        },
+        "linkedInvoices": {
+          "type": "array",
+          "items": {}
+        },
+        "linkedShipments": {
+          "type": "array",
+          "items": {}
+        },
+        "transactionLocationQuickBooks": {
+          "type": "string"
+        },
+        "exchangeRate": {
+          "type": "number",
+          "example": "1"
+        },
+        "customerMessage": {
+          "type": "string"
+        },
+        "statusMessage": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "customerNotes": {
+          "type": "string"
+        },
+        "customFields": {
+          "type": "string"
+        },
+        "customerPO": {
+          "type": "string",
+          "example": "416453007"
+        },
+        "depositPercent": {
+          "type": "number",
+          "example": "0"
+        },
+        "depositAmount": {
+          "type": "number",
+          "example": "0"
+        },
+        "subTotal": {
+          "type": "number",
+          "example": "1380"
+        },
+        "discountPercent": {
+          "type": "number",
+          "example": "0"
+        },
+        "discountAmount": {
+          "type": "number",
+          "example": "0"
+        },
+        "taxPercent": {
+          "type": "number",
+          "example": "0"
+        },
+        "taxAmount": {
+          "type": "number",
+          "example": "0"
+        },
+        "shippingAmount": {
+          "type": "number",
+          "example": "0"
+        },
+        "total": {
+          "type": "number",
+          "example": "1380"
+        },
+        "discountTaxable": {
+          "type": "boolean"
+        },
+        "shippingTaxable": {
+          "type": "boolean"
+        },
+        "dropShip": {
+          "type": "boolean"
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "summaryOnly": {
+          "type": "boolean"
+        },
+        "hasSignature": {
+          "type": "boolean"
+        },
+        "earliestDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2022-02-11T00:00:00"
+        },
+        "statusLink": {
+          "type": "string",
+          "example": "https://.orderfacts.com/Go?o=2ydI%2fS%2bS7n%2bUds9ac%2fYSHg%3d%3d"
+        },
+        "keys": {
+          "type": "string"
+        },
+        "values": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number",
+                "example": "106"
+              },
+              "lineNumber": {
+                "type": "number",
+                "example": "1"
+              },
+              "item": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": "28"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "10868070000415"
+                  }
+                }
+              },
+              "class": {
+                "type": "string"
+              },
+              "job": {
+                "type": "string"
+              },
+              "workcenter": {
+                "type": "string"
+              },
+              "tax": {
+                "type": "object",
+                "properties": {
+                  "taxable": {
+                    "type": "boolean"
+                  },
+                  "taxCode": {
+                    "type": "string"
+                  }
+                }
+              },
+              "linkedTransaction": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "example": "Case of 6 Unsweetened Concentrate"
+              },
+              "quantity": {
+                "type": "number",
+                "example": "60"
+              },
+              "weight": {
+                "type": "number",
+                "example": "0"
+              },
+              "volume": {
+                "type": "number",
+                "example": "0"
+              },
+              "weightunit": {
+                "type": "string",
+                "example": "lb"
+              },
+              "volumeunit": {
+                "type": "string",
+                "example": "cbm"
+              },
+              "unitprice": {
+                "type": "number",
+                "example": "23"
+              },
+              "amount": {
+                "type": "number",
+                "example": "1380"
+              },
+              "altAmount": {
+                "type": "number",
+                "example": "0"
+              },
+              "picked": {
+                "type": "number",
+                "example": "60"
+              },
+              "shipped": {
+                "type": "number",
+                "example": "0"
+              },
+              "invoiced": {
+                "type": "number",
+                "example": "0"
+              },
+              "produced": {
+                "type": "number",
+                "example": "0"
+              },
+              "returned": {
+                "type": "number",
+                "example": "0"
+              },
+              "cost": {
+                "type": "number"
+              },
+              "margin": {
+                "type": "number"
+              },
+              "listPrice": {
+                "type": "number"
+              },
+              "percentdiscount": {
+                "type": "number"
+              },
+              "duedate": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-02-11T00:00:00"
+              },
+              "uom": {
+                "type": "number"
+              },
+              "bin": {
+                "type": "string"
+              },
+              "lot": {
+                "type": "string"
+              },
+              "serials": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "parameters": {},
   "responses": {},
   "securityDefinitions": {
