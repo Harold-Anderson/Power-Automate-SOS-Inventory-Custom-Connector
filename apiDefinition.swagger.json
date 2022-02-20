@@ -731,10 +731,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "items": {
-                "$ref": "#/definitions/customer"
-              }
+              "$ref": "#/definitions/customer"
             }
           }
         },
@@ -762,10 +759,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "items": {
-                "$ref": "#/definitions/salesorder"
-              }
+              "$ref": "#/definitions/salesorder"
             }
           }
         },
@@ -1042,6 +1036,7 @@
       "properties": {
         "id": {
           "type": "number",
+          "description": "Sales Order ID",
           "example": "80"
         },
         "starred": {
@@ -1050,39 +1045,48 @@
         },
         "syncToken": {
           "type": "number",
+          "description": "Sales Order syncToken",
           "example": "0"
         },
         "number": {
           "type": "string",
+          "description": "Sales Order Number",
           "example": "81"
         },
         "date": {
           "type": "string",
           "format": "date-time",
+          "description": "Sales Order Date",
           "example": "2022-02-11T15:37:00.000Z"
         },
         "customer": {
           "type": "object",
+          "description": "Sales Order Customer",
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Order Customer ID",
               "example": "92"
             },
             "name": {
               "type": "string",
+              "description": "Sales Order Customer Name",
               "example": "UNFI Rocklin"
             }
           }
         },
         "location": {
           "type": "object",
+          "description": "Sales Order Location",
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Order Location ID",
               "example": "1"
             },
             "name": {
               "type": "string",
+              "description": "Sales Order Location Name",
               "example": "PRISM"
             }
           }
@@ -1095,13 +1099,16 @@
         },
         "terms": {
           "type": "object",
+          "description": "Sales Order Terms",
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Order Terms ID",
               "example": "6"
             },
             "name": {
               "type": "string",
+              "description": "Sales Order Terms Name",
               "example": "2% 10 Net 30"
             }
           }
@@ -1111,26 +1118,32 @@
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Order Sales Rep ID",
               "example": "8"
             },
             "name": {
               "type": "string",
+              "description": "Sales Order Sales Rep Name",
               "example": "Ricky Roma"
             }
           }
         },
         "channel": {
-          "type": "string"
+          "type": "string",
+          "description": "Sales Order Channel"
         },
         "department": {
           "type": "object",
+          "description": "Sales Order Department",
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Order Department ID",
               "example": "1"
             },
             "name": {
               "type": "string",
+              "description": "Sales Order Department Name",
               "example": "Retail"
             }
           }
@@ -1264,15 +1277,19 @@
         },
         "lines": {
           "type": "array",
+          "description": "Sales Order Lines",
           "items": {
             "type": "object",
+            "description": "Sales Order Lines Items",
             "properties": {
               "id": {
                 "type": "number",
+                "description": "Sales Order Line ID",
                 "example": "106"
               },
               "lineNumber": {
                 "type": "number",
+                "description": "Sales Order Line Number",
                 "example": "1"
               },
               "item": {
@@ -1280,10 +1297,12 @@
                 "properties": {
                   "id": {
                     "type": "number",
+                    "description": "Sales Order Line Item ID",
                     "example": "28"
                   },
                   "name": {
                     "type": "string",
+                    "description": "Sales Order Line Item Name",
                     "example": "10868070000415"
                   }
                 }
@@ -1313,34 +1332,42 @@
               },
               "description": {
                 "type": "string",
+                "description": "Sales Order Line Item Description",
                 "example": "Case of 6 Unsweetened Concentrate"
               },
               "quantity": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity",
                 "example": "60"
               },
               "weight": {
                 "type": "number",
+                "description": "Sales Order Line Item Weight",
                 "example": "0"
               },
               "volume": {
                 "type": "number",
+                "description": "Sales Order Line Item Volume",
                 "example": "0"
               },
               "weightunit": {
                 "type": "string",
+                "description": "Sales Order Line Item Weight Unit",
                 "example": "lb"
               },
               "volumeunit": {
                 "type": "string",
+                "description": "Sales Order Line Item Volume Unit",
                 "example": "cbm"
               },
               "unitprice": {
                 "type": "number",
+                "description": "Sales Order Line Item Unit Price",
                 "example": "23"
               },
               "amount": {
                 "type": "number",
+                "description": "Sales Order Line Item Amount",
                 "example": "1380"
               },
               "altAmount": {
@@ -1349,38 +1376,48 @@
               },
               "picked": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity Picked",
                 "example": "60"
               },
               "shipped": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity Shipped",
                 "example": "0"
               },
               "invoiced": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity Invoiced",
                 "example": "0"
               },
               "produced": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity Produced",
                 "example": "0"
               },
               "returned": {
                 "type": "number",
+                "description": "Sales Order Line Item Quantity Returned",
                 "example": "0"
               },
               "cost": {
-                "type": "number"
+                "type": "number",
+                "description": "Sales Order Line Item Cost"
               },
               "margin": {
+                "description": "Sales Order Line Item Margin",
                 "type": "number"
               },
               "listPrice": {
+                "description": "Sales Order Line Item List Price",
                 "type": "number"
               },
               "percentdiscount": {
+                "description": "Sales Order Line Item Percent Discount",
                 "type": "number"
               },
               "duedate": {
                 "type": "string",
+                "description": "Sales Order Line Item Due Date",
                 "format": "date-time",
                 "example": "2022-02-11T00:00:00"
               },
@@ -1391,6 +1428,7 @@
                 "type": "string"
               },
               "lot": {
+                "description": "Sales Order Line Item Lot",
                 "type": "string"
               },
               "serials": {
@@ -1539,7 +1577,7 @@
             "properties": {
               "id": {
                 "type": "number",
-                "description": "CustoM Field ID",
+                "description": "Custom Field ID",
                 "example": "5"
               },
               "name": {
@@ -1563,6 +1601,7 @@
         "pickBy": {
           "type": "string",
           "format": "date-time",
+          "description": "Pick-by Date",
           "example": "2019-06-17T00:00:00"
         },
         "total": {
@@ -1665,18 +1704,22 @@
                 }
               },
               "description": {
-                "type": "string"
+                "type": "string",
+                "description": "Line Item Description"
               },
               "quantity": {
                 "type": "number",
+                "description": "Line Item Quantity",
                 "example": "1"
               },
               "weight": {
                 "type": "number",
+                "description": "Line Item weight",
                 "example": "12"
               },
               "volume": {
                 "type": "number",
+                "description": "Line Item Volume",
                 "example": "12"
               },
               "weightunit": {
@@ -1689,26 +1732,32 @@
               },
               "unitprice": {
                 "type": "number",
+                "description": "Line Item Unit Price",
                 "example": "12"
               },
               "amount": {
                 "type": "number",
+                "description": "Line Item Amount",
                 "example": "12"
               },
               "cost": {
                 "type": "number",
+                "description": "Line Item Cost",
                 "example": "1"
               },
               "margin": {
                 "type": "number",
+                "description": "Line Item Margin",
                 "example": "1100"
               },
               "listprice": {
                 "type": "number",
+                "description": "Line Item List Price",
                 "example": "0"
               },
               "percentdiscount": {
                 "type": "number",
+                "description": "Line Item Percent Discount",
                 "example": "0"
               }
             }
@@ -1774,10 +1823,12 @@
         },
         "phone": {
           "type": "string",
+          "description": "Customer Company Phone",
           "example": "817-555-1212"
         },
         "mobile": {
           "type": "string",
+          "description": "Customer Mobile Phone",
           "example": "817-555-2121"
         },
         "altPhone": {
@@ -1788,6 +1839,7 @@
         },
         "companyName": {
           "type": "string",
+          "description": "Customer Company Name",
           "example": "ABC Plastic Products, Inc."
         },
         "contact": {
@@ -1795,18 +1847,22 @@
           "properties": {
             "title": {
               "type": "string",
+              "description": "Customer Contact title",
               "example": "Mr"
             },
             "firstName": {
               "type": "string",
+              "description": "Customer Contact First Name",
               "example": "Mike"
             },
             "lastName": {
               "type": "string",
+              "description": "Customer Contact First Name",
               "example": "Mills"
             },
             "suffix": {
-              "type": "string"
+              "type": "string",
+              "description": "Customer Contact Suffix"
             }
           }
         },
@@ -1821,10 +1877,12 @@
           "properties": {
             "id": {
               "type": "number",
+              "description": "Customer terms id",
               "example": "11"
             },
             "name": {
               "type": "string",
+              "description": "Customer terms name",
               "example": "NET 30"
             }
           }
@@ -1847,10 +1905,12 @@
           "properties": {
             "id": {
               "type": "number",
+              "description": "Payment Method ID",
               "example": "7"
             },
             "name": {
               "type": "string",
+              "description": "Payment Method Name",
               "example": "Check"
             }
           }
@@ -1860,10 +1920,12 @@
           "properties": {
             "id": {
               "type": "number",
+              "description": "Sales Rep ID",
               "example": "19"
             },
             "name": {
               "type": "string",
+              "description": "Sales Rep Name",
               "example": "Sally Sails"
             }
           }
@@ -1885,13 +1947,16 @@
         },
         "resaleNumber": {
           "type": "string",
+          "description": "Resale Number",
           "example": "B4829-91941"
         },
         "contractorNumber": {
-          "type": "string"
+          "type": "string",
+          "description": "Contractor Number"
         },
         "businessLicense": {
-          "type": "string"
+          "type": "string",
+          "description": "Business License"
         },
         "foundUsVia": {
           "type": "string",
@@ -1902,10 +1967,12 @@
           "properties": {
             "id": {
               "type": "number",
+              "description": "Currency ID",
               "example": "42"
             },
             "name": {
               "type": "string",
+              "description": "Currency Name",
               "example": "USD"
             }
           }
@@ -1921,10 +1988,12 @@
               "properties": {
                 "id": {
                   "type": "number",
+                  "description": "Tax Code ID",
                   "example": "5"
                 },
                 "name": {
                   "type": "string",
+                  "description": "Tax Code Name",
                   "example": "Sales Tax"
                 }
               }
@@ -1946,27 +2015,33 @@
           "example": ""
         },
         "notes": {
-          "type": "string"
+          "type": "string",
+          "description": "Customer notes"
         },
         "customFields": {
           "type": "array",
           "items": {
             "type": "object",
+            "description": "Customer Custom Fields Items",
             "properties": {
               "id": {
                 "type": "number",
+                "description": "Customer Custom Field ID",
                 "example": "5"
               },
               "name": {
                 "type": "string",
+                "description": "Customer Custom Field Name",
                 "example": "Checkbox"
               },
               "value": {
                 "type": "string",
+                "description": "Customer Custom Field Value",
                 "example": "false"
               },
               "dataType": {
                 "type": "string",
+                "description": "Customer Custom Field Data Type",
                 "example": "Boolean"
               }
             }
@@ -1977,13 +2052,16 @@
           "items": {}
         },
         "archived": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Customer Archived"
         },
         "hasChildren": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Customer Has Children"
         },
         "summaryOnly": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Customer summary only "
         }
       }
     },
