@@ -15,7 +15,9 @@
   "schemes": [
     "https"
   ],
-  "consumes": [],
+  "consumes": [
+    "application/json"
+  ],
   "produces": [],
   "paths": {
     "/item": {
@@ -898,6 +900,47 @@
         ]
       }
     },
+    "/pickticket/{id}": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/pickticket"
+            }
+          },
+          "default": {
+            "description": "default response"
+          }
+        },
+        "summary": "Update Pick ticket",
+        "description": "Updates a specific pick ticket by setting the values of the parameters passed.",
+        "operationId": "UpdatePickTicket",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "number",
+            "x-ms-summary": "ID",
+            "description": "Pick Ticket ID to update",
+            "required": true,
+            "x-ms-visibility": "important",
+            "x-ms-url-encoding": "single"
+          },
+          {
+            "in": "body",
+            "name": "pickticket",
+            "description": "The pick ticket to update.",
+            "schema": {
+              "$ref": "#/definitions/pickticket"
+            },
+            "x-ms-summary": "Appointment",
+            "x-ms-visibility": "important"
+          }
+        ]
+      }
+    },
     "/pickticket": {
       "get": {
         "responses": {
@@ -1564,6 +1607,7 @@
         },
         "comment": {
           "type": "string",
+          "description": "Pick Ticket Comment",
           "example": "Pricing per unit"
         },
         "customerNotes": {
@@ -2069,15 +2113,19 @@
       "type": "object",
       "properties": {
         "id": {
+          "description": "Linked Transaction id",
           "type": "integer"
         },
         "transactionType": {
+          "description": "Linked Transaction type",
           "type": "string"
         },
         "refNumber": {
+          "description": "Linked Transaction Ref Number",
           "type": "string"
         },
         "linenumber": {
+          "description": "Linked Transaction Line Number",
           "type": "integer"
         }
       }
@@ -2143,6 +2191,17 @@
               "example": "USA"
             }
           }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
         }
       }
     }
