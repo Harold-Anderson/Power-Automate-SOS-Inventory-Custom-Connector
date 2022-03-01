@@ -1774,35 +1774,35 @@
                 "type": "string",
                 "example": "cbm"
               },
-              "unitprice": {
-                "type": "number",
-                "description": "Line Item Unit Price",
-                "example": "12"
+              "uom": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "description": "UOM ID",
+                    "example": "10"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "UOM Name",
+                    "example": "case"
+                  }
+                }
               },
-              "amount": {
-                "type": "number",
-                "description": "Line Item Amount",
-                "example": "12"
-              },
-              "cost": {
-                "type": "number",
-                "description": "Line Item Cost",
-                "example": "1"
-              },
-              "margin": {
-                "type": "number",
-                "description": "Line Item Margin",
-                "example": "1100"
-              },
-              "listprice": {
-                "type": "number",
-                "description": "Line Item List Price",
-                "example": "0"
-              },
-              "percentdiscount": {
-                "type": "number",
-                "description": "Line Item Percent Discount",
-                "example": "0"
+              "lot": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "description": "Lot ID",
+                    "example": "10"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Lot Name",
+                    "example": "2023-03-15"
+                  }
+                }
               }
             }
           }
