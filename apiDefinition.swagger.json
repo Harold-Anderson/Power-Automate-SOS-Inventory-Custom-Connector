@@ -935,7 +935,7 @@
             "schema": {
               "$ref": "#/definitions/pickticket"
             },
-            "x-ms-summary": "Appointment",
+            "x-ms-summary": "Update Pick Ticket",
             "x-ms-visibility": "important"
           }
         ]
