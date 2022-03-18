@@ -915,13 +915,14 @@
         },
         "summary": "Update Pick ticket",
         "description": "Updates a specific pick ticket by setting the values of the parameters passed.",
+        "consumes": ["application/x-www-form-urlencoded"],
         "operationId": "UpdatePickTicket",
         "x-ms-visibility": "important",
         "parameters": [
           {
             "in": "path",
             "name": "id",
-            "type": "number",
+            "type": "integer",
             "x-ms-summary": "ID",
             "description": "Pick Ticket ID to update",
             "required": true,
