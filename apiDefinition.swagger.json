@@ -16,7 +16,7 @@
     "https"
   ],
   "consumes": [
-    "application/json"
+    "application/x-www-form-urlencoded"
   ],
   "produces": [],
   "paths": {
@@ -1486,16 +1486,20 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "number",
+          "type": "integer",
           "description": "Pick Ticket ID",
           "example": "123"
         },
         "starred": {
-          "type": "number",
+          "type": "integer",
           "example": "0"
         },
+        "closed": {
+          "type": "boolean",
+          "example": "false"
+        },
         "syncToken": {
-          "type": "number",
+          "type": "integer",
           "example": "0"
         },
         "number": {
@@ -1512,7 +1516,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Customer ID",
               "example": "23"
             },
@@ -1527,7 +1531,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Location ID",
               "example": "10"
             },
@@ -1542,7 +1546,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Channel ID",
               "example": "3"
             },
@@ -1557,7 +1561,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Priority ID",
               "example": "4"
             },
@@ -1572,7 +1576,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Assigned to User ID",
               "example": "38"
             },
@@ -1587,7 +1591,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Shipping Method ID",
               "example": "7"
             },
@@ -1620,7 +1624,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "number",
+                "type": "integer",
                 "description": "Custom Field ID",
                 "example": "5"
               },
@@ -1644,12 +1648,12 @@
         },
         "pickBy": {
           "type": "string",
-          "format": "date-time",
+          "format": "date",
           "description": "Pick-by Date",
-          "example": "2019-06-17T00:00:00"
+          "example": "2019-06-17"
         },
         "total": {
-          "type": "number",
+          "type": "integer",
           "example": "12"
         },
         "archived": {
@@ -1667,12 +1671,12 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "number",
+                "type": "integer",
                 "description": "Pick Ticket Line ID",
                 "example": "123345"
               },
               "lineNumber": {
-                "type": "number",
+                "type": "integer",
                 "description": "Pick Ticket Line Number",
                 "example": "1"
               },
@@ -1713,7 +1717,7 @@
                 "type": "object",
                 "properties": {
                   "id": {
-                    "type": "number",
+                    "type": "integer",
                     "description": "Pick Ticket workcenter ID",
                     "example": "10"
                   },
@@ -1734,7 +1738,7 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "number",
+                        "type": "integer",
                         "description": "Pick Ticket TaxCode ID",
                         "example": "1"
                       },
@@ -1778,7 +1782,7 @@
                 "type": "object",
                 "properties": {
                   "id": {
-                    "type": "number",
+                    "type": "integer",
                     "description": "UOM ID",
                     "example": "10"
                   },
@@ -1793,7 +1797,7 @@
                 "type": "object",
                 "properties": {
                   "id": {
-                    "type": "number",
+                    "type": "integer",
                     "description": "Lot ID",
                     "example": "10"
                   },
@@ -1818,11 +1822,11 @@
           "example": "123"
         },
         "starred": {
-          "type": "number",
+          "type": "integer",
           "example": "0"
         },
         "syncToken": {
-          "type": "number",
+          "type": "integer",
           "description": "Customer syncToken",
           "example": "0"
         },
@@ -1840,7 +1844,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Customer Parent ID",
               "example": "311"
             },
@@ -1852,7 +1856,7 @@
           }
         },
         "sublevel": {
-          "type": "number",
+          "type": "integer",
           "example": "1"
         },
         "email": {
@@ -1920,7 +1924,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Customer terms id",
               "example": "11"
             },
@@ -1935,7 +1939,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "example": "21"
             },
             "name": {
@@ -1948,7 +1952,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Payment Method ID",
               "example": "7"
             },
@@ -1963,7 +1967,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Sales Rep ID",
               "example": "19"
             },
@@ -1978,7 +1982,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Customer Type ID",
               "example": "3"
             },
@@ -2010,7 +2014,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "number",
+              "type": "integer",
               "description": "Currency ID",
               "example": "42"
             },
@@ -2031,7 +2035,7 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "number",
+                  "type": "integer",
                   "description": "Tax Code ID",
                   "example": "5"
                 },
@@ -2069,7 +2073,7 @@
             "description": "Customer Custom Fields Items",
             "properties": {
               "id": {
-                "type": "number",
+                "type": "integer",
                 "description": "Customer Custom Field ID",
                 "example": "5"
               },
