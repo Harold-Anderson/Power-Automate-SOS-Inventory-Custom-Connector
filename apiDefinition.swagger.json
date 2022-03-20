@@ -923,7 +923,7 @@
             "in": "path",
             "name": "id",
             "type": "integer",
-            "x-ms-summary": "ID",
+            "x-ms-summary": "id",
             "description": "Pick Ticket ID to update",
             "required": true,
             "x-ms-visibility": "important",
