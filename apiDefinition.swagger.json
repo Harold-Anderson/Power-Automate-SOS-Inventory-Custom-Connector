@@ -1654,8 +1654,8 @@
           "example": "2019-06-17"
         },
         "total": {
-          "type": "integer",
-          "example": "12"
+          "type": "number",
+          "example": "64.08"
         },
         "archived": {
           "type": "boolean"
